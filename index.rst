@@ -8,3 +8,4 @@ Diesel Documentation
    sample-code.rst
    best-practices.rst
    datatype/address.rst
+   object/canconvert.rst
