@@ -3,11 +3,8 @@ Object: Culture
 
 This object contains methods for retrieving cultures.
 
-Methods
--------
-
-Get
-^^^
+Get(String)
+-----------
 
 Returns the culture associated with the specified code.
 

@@ -1,4 +1,4 @@
-Object - CanConvert
+Object: CanConvert
 ===================
 
 This object contains methods for determining whether an object can be converted from one type to another.
@@ -17,7 +17,7 @@ Converts the specified object to a signed 32-bit integer.
 The conversion operation uses the culture specified in the globalization preferences.
 
 ToInt32(Object, Culture)
----------------
+------------------------
 
 Converts the specified object to a signed 32-bit integer using the specified culture.
 

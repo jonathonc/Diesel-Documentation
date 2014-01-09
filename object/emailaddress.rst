@@ -3,8 +3,8 @@ Object: EmailAddress
 
 This object contains methods for parsing email addresses.
 
-CanParse
---------
+CanParse(String)
+----------------
 
 Returns the culture associated with the specified code.
 
@@ -16,8 +16,8 @@ Returns the culture associated with the specified code.
 
 - Null references are not permitted.
 
-Parse
------
+Parse(String)
+-------------
 
 Returns the culture associated with the specified code.
 
