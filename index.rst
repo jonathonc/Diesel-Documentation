@@ -13,3 +13,5 @@ Diesel Documentation
    object/canconvert.rst
    object/culture.rst
    object/emailaddress.rst
+   object/email.rst
+   object/sms.rst
