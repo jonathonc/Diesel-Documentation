@@ -19,25 +19,21 @@ SMS
     Settings.Locale.PhoneNumberParser = PhoneNumber.GetParser('AUS/Mobile');
     Settings.Locale.UtcOffset = Time.GetTimeZone('AUS/Sydney');     
 
-    Record[] records = Data['Source'] to Record[];
-
     Object[] messages = Collection.Create();
-
-    Record[] filteredRecords = records.Where(record -> 
-        PhoneNumber.TryParse(record['Mobile'] to String) != null &&
-        record['Name'] to String == "John"
-    );
+    Record[] records = Data['Source'] to Record[];
+    
+    Record[] cleansedRecords = records.Select(
+        record -> 'Name' : record['Name'],
+        record -> 'ParsedMobile' : PhoneNumber.TryParse(record['Mobile'] to String));
+        
+    Record[] filteredRecords = cleansedRecords.Where(record -> record['ParsedMobile'] != null);
+    
     filteredRecords.Each(record -> {
-
-        String mobile = record['Mobile'] to String;
-
-        PhoneNumber Mobile = PhoneNumber.TryParse(mobile);
-
         SmsMessage smsMessage = Sms.CreateMessage();
         smsMessage.Body = @"test";
         smsMessage.Concatenation = false;
         smsMessage.Encoding = Sms.GetEncoding("Gsm7");
-        smsMessage.Recipients = Sms.CreateRecipients(Mobile);
+        smsMessage.Recipients = Sms.CreateRecipients(record['ParsedMobile']);
         smsMessage.ReplyTo = EmailAddress.Parse('jonathonc@irwinsolutions.com');
         smsMessage.Subject = "test";
 
