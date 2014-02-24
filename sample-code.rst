@@ -17,29 +17,34 @@ SMS
     Settings.Locale.TemporalFormat = "{0}";
     Settings.Locale.Culture = Culture.Get('en-AU');
     Settings.Locale.PhoneNumberParser = PhoneNumber.GetParser('AUS/Mobile');
-    Settings.Locale.TimeZone = Time.GetTimeZone('SYD');
-     
-    // Columns
+    Settings.Locale.UtcOffset = Time.GetTimeZone('AUS/Sydney');     
+
     Record[] records = Data['Source'] to Record[];
-    Record firstRecord = records.First();
-    Object mobile = firstRecord['Mobile'];
-    Object name = firstRecord['Name'];
-     
-    // Fields
-    Object Mobile = TryConvert.ToPhoneNumber(mobile);
-    Object CSV = Csv.AutoCreate(
-        records, 
-        Csv.GetFieldDelimiter('Comma'), Csv.GetRecordDelimiter('CRLF'), Csv.GetQualifier('SingleQuote'), String.GetEncoding('us-ascii'));
-     
-    // SMS Template
-    SmsMessage smsMessage = Sms.CreateMessage();
-    smsMessage.ReplyTo = Convert.ToEmailAddress("testing@irwinsolutions.com");
-    smsMessage.Subject = "Test Message";
-    smsMessage.Body = "A test message from Hg+";
-    smsMessage.Recipients = Sms.CreateRecipients(Mobile);
-    smsMessage.Encoding = Sms.GetEncoding("Gsm7");
-    smsMessage.Condition = Mobile != null;
-    smsMessage.Tag["Source"] = "{" + "dataType: 'CSV',  data : '#{CSV}'" + "}";
+
+    Object[] messages = Collection.Create();
+
+    Record[] filteredRecords = records.Where(record -> 
+        PhoneNumber.TryParse(record['Mobile'] to String) != null &&
+        record['Name'] to String == "John"
+    );
+    filteredRecords.Each(record -> {
+
+        String mobile = record['Mobile'] to String;
+
+        PhoneNumber Mobile = PhoneNumber.TryParse(mobile);
+
+        SmsMessage smsMessage = Sms.CreateMessage();
+        smsMessage.Body = @"test";
+        smsMessage.Concatenation = false;
+        smsMessage.Encoding = Sms.GetEncoding("Gsm7");
+        smsMessage.Recipients = Sms.CreateRecipients(Mobile);
+        smsMessage.ReplyTo = EmailAddress.Parse('jonathonc@irwinsolutions.com');
+        smsMessage.Subject = "test";
+
+        messages = messages.Concat(Collection.Create(smsMessage));
+    });
+
+    Dispatch(messages.SelectSingle(message -> message to Message));
 
 Email
 -----
