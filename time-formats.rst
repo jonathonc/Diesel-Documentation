@@ -1,6 +1,12 @@
 TimeFormats
 ===========
 
+The following provides a short
+
+::
+
+  String.ToString(Time.CurrentLocal, TimeFormats.LongYear); // 2015
+
 TimeFormats.DayOfMonth
 --------------------------------
 
