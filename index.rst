@@ -25,6 +25,7 @@ Diesel Documentation
    string.rst
    tag.rst
    time.rst
+   time-formats.rst
    tryconvert.rst
    uriaddress.rst
    zip.rst
