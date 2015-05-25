@@ -11,3 +11,4 @@ It will attempt to create the following "Mr Smith"
 It be default proper cases everything
 
 Name.CreateFormal(string title, string surname) : String
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
