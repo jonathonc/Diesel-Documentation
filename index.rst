@@ -5,3 +5,5 @@ Diesel Documentation
    :maxdepth: 10
 
    intro.rst
+   name.rst
+   string.rst
