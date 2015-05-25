@@ -20,7 +20,7 @@ proper cases all output.
 
 **Name.TryCreate(int characterLimit, string defaultText, params string[] name) : string**
 
-::
+Sample::
 
   String.ToProper(record['Salutation'] to String) + " " + String.ToProper(record['Surname'] to String)
             <- String.LengthBetween(record['Salutation'] to String, 2, 3) && String.LengthBetween(record['Surname'] to String, 2, 12),
