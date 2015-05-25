@@ -4,13 +4,13 @@ String
 String.Contains
 ---------------
 
-String.ToProper
+String.CreateFile
 ---------------
 
 
-String.ToLower
+String.EndsWith
 ---------------
 
 
-String.Contains
+String.IndexOf
 ---------------
