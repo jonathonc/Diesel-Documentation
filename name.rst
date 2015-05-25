@@ -22,9 +22,5 @@ proper cases all output.
 
 Sample::
 
-  String.ToProper(record['Salutation'] to String) + " " + String.ToProper(record['Surname'] to String)
-            <- String.LengthBetween(record['Salutation'] to String, 2, 3) && String.LengthBetween(record['Surname'] to String, 2, 12),
-        String.ToProper(record['FirstName'] to String) 
-            <- String.LengthBetween(record['FirstName'] to String, 2, 15),
-        "Sir/Madam"
+  String name  = Name.TryCreate(15, "Sir/Madam", title, record['FirstName'] to String);
 
