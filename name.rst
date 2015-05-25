@@ -10,19 +10,20 @@ It will attempt to create the following "Mr Smith"
 
 It be default proper cases everything
 
-Name.CreateFormal(string title, string surname) : String
+**Name.CreateFormal(string title, string surname) : String**
 
 Name.TryCreate
 --------------
 
-This replaces the cascade name rule.
+Attempts to find a valid name based on the defined character limit. Automatically
+proper cases all output.
 
-```
- String.ToProper(record['Salutation'] to String) + " " + String.ToProper(record['Surname'] to String)
+**Name.TryCreate(int characterLimit, string defaultText, params string[] name) : string**
+
+::
+  String.ToProper(record['Salutation'] to String) + " " + String.ToProper(record['Surname'] to String)
             <- String.LengthBetween(record['Salutation'] to String, 2, 3) && String.LengthBetween(record['Surname'] to String, 2, 12),
         String.ToProper(record['FirstName'] to String) 
             <- String.LengthBetween(record['FirstName'] to String, 2, 15),
         "Sir/Madam"
-```
 
-Name.TryCreate(int characterLimit, string defaultText, params string[] name) : string
