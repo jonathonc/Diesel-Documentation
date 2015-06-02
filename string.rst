@@ -81,21 +81,93 @@ Sample::
 
   String.Length("word") == 4;
 
-String.ToProper
----------------
-Converts a string to proper casing, i.e. converts first letter of each word to uppercase.
+String.LengthBetween
+--------------------
+Returns true if string is between a specified minLength and maxLength range, otherwise false. Can specify inclusive or exclusive range.
 
 Overloads
 ~~~~~~~~~
-1. **String.ToProper(String str, ICultureAccessor cultureAccessor): String**
-2. **String.ToProper(String str): String**
+1. String.LengthBetween(String str, Int minLength, Int maxLength, Bool inclusive): Int**
+2. String.LengthBetween(String str, Int minLength, Int maxLength): Int**
 
-- cultureAccessor defaults to the culture defined in settings
-- throws an exception if str is null
+- inclusive defaults to false
+- str cannot be null
+- minLength must be greater than or equal to 0
+- maxLength must be strictly greater than 0
+- maxLength must be strictly greater than minLength
+- if inclusive is false, returns true if str length is strictly greater than minLength and strictly less than maxLength
+- if inclusive is true, returns true if str length is greater than or equal to minLength and greater than or equal to maxLength
 
 Sample::
 
-  String.ToProper("mrs anderson") == "Mrs Anderson";
+  record -> 'Name' : record['FirstName'] <- String.LengthBetween(record['FirstName'] to String, 2, 10), 'Sir/Madam'
+
+String.IsEmpty
+--------------
+Returns true if input string is empty, otherwise false.
+
+Overloads
+~~~~~~~~~
+1. **String.Empty(String str): Bool**
+
+Sample::
+
+  String.IsEmpty("") == true;
+  String.IsEmpty(String.Empty) == true;
+  String.IsEmpty("string") == false;
+
+String.IsNullOrEmpty
+--------------------
+Returns true if input string is null or empty, otherwise false.
+
+Overloads
+~~~~~~~~~
+1. **String.IsNullOrEmpty(String str): Bool**
+
+Sample::
+
+  String.IsNullOrEmpty(null) == true;
+  String.IsNullOrEmpty("") == true;
+  String.IsNullOrEmpty(String.Empty) == true;
+  String.IsNullOrEmpty("string") == false;
+
+String.IsNullOrWhiteSpace
+-------------------------
+Returns true if input string is null or entirely whitespace, otherwise false.
+
+Overloads
+~~~~~~~~~
+1. **String.IsNullOrWhitespace(String str): Bool**
+
+Sample::
+
+  String.IsNullOrWhitespace(null) == true;
+  String.IsNullOrWhitespace("        ") == true;
+  String.IsNullOrWhitespace("This is a sentence") == false;
+
+String.Repeater
+---------------
+
+
+Overloads
+~~~~~~~~~
+1. **String.Repeater(): String**
+
+
+String.Replace
+--------------
+Searches the input string str for instances of the substring searchString, and replaces all of them with replacementString.
+
+Overloads
+~~~~~~~~~
+1. **String.Replace(String str, String searchString, String replacementString): String**
+
+- None of str, searchString, and replacementString can be null
+- searchString cannot be an empty string
+
+Sample::
+
+  String.Replace("I am very calm right now", "very calm", "nearly s****ing myself");
 
 String.ToLower
 --------------
@@ -111,6 +183,38 @@ Overloads
 
 Sample::
   String.ToLower("WORD") == "word";
+
+String.Split
+------------
+Returns a string array containing substrings of the original string delimeted by specified delimeter.
+
+Overloads
+~~~~~~~~~
+1. **String.Split(String str, String delimeter): String[]**
+
+- str cannot be null
+
+Sample::
+  String[] stringArr = String.Split("This is a sentence.", " ");
+  stringArr[0] == "This";
+  stringArr[1] == "is";
+  stringArr[2] == "a";
+
+String.ToProper
+---------------
+Converts a string to proper casing, i.e. converts first letter of each word to uppercase.
+
+Overloads
+~~~~~~~~~
+1. **String.ToProper(String str, ICultureAccessor cultureAccessor): String**
+2. **String.ToProper(String str): String**
+
+- cultureAccessor defaults to the culture defined in settings
+- throws an exception if str is null
+
+Sample::
+
+  String.ToProper("mrs anderson") == "Mrs Anderson";
 
 String.ToUpper
 --------------
