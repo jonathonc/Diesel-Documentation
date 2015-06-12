@@ -78,7 +78,7 @@ Overloads
 
 Sample::
 
-  Object values = Collection.Create(12.2, 2.1, 7.8);
+  Double[] values = Collection.Create(12.2, 2.1, 7.8);
   Double popStdDev = Math.PopulationStandardDeviation(values);
 
 Math.PopulationVariance
@@ -95,7 +95,7 @@ Overloads
 
 Sample::
 
-  Object values = Collection.Create(12.2, 2.1, 7.8);
+  Double[] values = Collection.Create(12.2, 2.1, 7.8);
   Double popVar = Math.PopulationVariance(values);
 
 Math.Round
@@ -125,7 +125,7 @@ Overloads
 
 Sample::
 
-  Object values = Collection.Create(12.2, 2.1, 7.8);
+  Double[] values = Collection.Create(12.2, 2.1, 7.8);
   Double SSD = Math.SampleStandardDeviation(values);
 
 Math.SampleVariance
@@ -142,7 +142,7 @@ Overloads
 
 Sample::
 
-  Object values = Collection.Create(12.2, 2.1, 7.8);
+  Double[] values = Collection.Create(12.2, 2.1, 7.8);
   Double SV = Math.SampleVariance(values);
 
 Math.Truncate
