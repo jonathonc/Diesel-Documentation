@@ -106,10 +106,11 @@ Overloads
 ~~~~~~~~~
 1. **Time.GetTimePeriod(String timeString): BaseTimePeriod**
 
-Valid timeStrings include:  
+Valid timeStrings include:
+ 
 - "Day" 
-- "Month" 
-- "Year"
+- "Month"   
+- "Year"  
 
 Sample::
 
