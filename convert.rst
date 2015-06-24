@@ -1,6 +1,8 @@
 Convert
 ==========
 
+All the Convert methods convert the input parameter into the specified data type and return it.
+
 Convert.ToBool
 ----------------------
 Converts an object into a boolean.
@@ -47,6 +49,7 @@ Converts an object into a signed byte.
 
 Convert.ToSingle
 ----------------------
+Converts an object into a single (single-precision floating-point number)
 
 Convert.ToString
 ----------------------

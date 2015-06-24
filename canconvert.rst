@@ -1,6 +1,13 @@
 CanConvert
 ==========
 
+All the CanConvert methods return true if the input parameter can be converted to the specified data type, and false otherwise.
+
+**General overloads:**
+
+1. CanConvert.ToWhateverType(Object input, ICultureAccessor culture): WhateverType
+2. CanConvert.ToWhateverType(Object input): WhateverType
+
 CanConvert.ToBool
 ----------------------
 
