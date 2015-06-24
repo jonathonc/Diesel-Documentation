@@ -13,7 +13,14 @@ Overloads
 
 Sample::
 
-  TextFile csvFile = String.CreateFile("NoContact.csv", Csv.CreateWithDefaults(noContactRecords,
+  String csv = Csv.CreateWithDefaults(records,
+    record -> 'Mobile' : record.Mobile,
+    record -> 'FirstName': record.FirstName
+  );
+  
+Creating a CSV file::
+
+  TextFile csvFile = String.CreateFile("data.csv", Csv.CreateWithDefaults(records,
     record -> 'CustNo' : record.CustNo,
     record -> 'FirstName': record.FirstName
   ));
