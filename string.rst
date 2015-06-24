@@ -195,6 +195,7 @@ Overloads
 - str cannot be null
 
 Sample::
+
   String[] stringArr = String.Split("This is a sentence.", " ");
   stringArr[0] == "This";
   stringArr[1] == "is";

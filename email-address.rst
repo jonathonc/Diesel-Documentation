@@ -25,4 +25,5 @@ Overloads
 1. **EmailAddress.TryParse(params String[] values)**
 
 Sample::
+
   record -> 'Email': EmailAddress.TryParse(record['Email'])
