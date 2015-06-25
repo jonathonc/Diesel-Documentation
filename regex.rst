@@ -15,13 +15,6 @@ Sample::
 
 Regex.Word
 -----------
+A property (not a method) that stores a regular expression equivalent to the 'get word' expression. Used in conjunction with Regex.Match like so::
 
-Searches an input string for all occurrences of a word and returns the value of the (matchIndex)th match.
-
-Overloads
-~~~~~~~~~
-1. **Regex.Word(String inputString, Int matchIndex)**
-
-Sample::
-
-  record -> 'Name' : Regex.Word(record['Name'] to String, 1)
+  record -> 'Name' : Regex.Match(record['Name'] to String, Regex.Word, 1);
