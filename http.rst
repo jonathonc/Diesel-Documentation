@@ -17,8 +17,8 @@ Typical Usage
         'Rego' : originalRecord.Rego
     );
   HttpRecipient httpRecipient = Http.CreateRecipient();
-  httpRecipient.UserName = polarBearApiKey;
-  httpRecipient.Address = UriAddress.Parse(polarBearApiUrl);
+  httpRecipient.UserName = "xxxx";
+  httpRecipient.Address = UriAddress.Parse("https://someUrl.com");
   httpMessage.Recipients = Http.CreateRecipients(httpRecipient);
   
   messages = messages.Add(httpMessage);
