@@ -1,6 +1,21 @@
 Sms
 ===
 
+Typical Usage
+-------------
+::
+
+  Record[] smsRecords = records.Where(record -> record.Mobile != null && record.Email == null);
+  ForEach(smsRecords, record -> {
+    SmsMessage smsMessage = Sms.CreateMessage();
+    smsMessage.Subject = "#{dealershipName} - #{processName} SMS (Rego: #{record.Rego})";
+    smsMessage.ReplyTo = EmailAddress.Parse("service@someDealership.com");
+    smsMessage.Body = "@Dear #{record.NameSMS}. Your #{record.MakeSMS} #{record.Rego} service appointment is confirmed for: #{record.ApptDate}, from 7.30am. On the day of your service, please bring the following: Driver's License, Service Book and All Vehicle Keys. Rgds #{dealershipName} (#{dealershipPhone}).";
+    smsMessage.Concatenation = true;
+
+    messageList = messageList.Add(smsMessage);
+  })
+
 Properties
 ----------
 

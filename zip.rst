@@ -1,6 +1,21 @@
 Zip
 ===
 
+Typical Usage
+-------------
+::
+
+  File[] filesForZip = Collection.Create(csvFile).Map(x -> x to File);
+  ZipFile zipFile = Zip.CreateFile("FileName.zip", filesForZip);
+  zipFile.Settings.Password = 'password123';
+  zipFile.Settings.CompressionMethod = "Deflate";
+  zipFile.Settings.CompressionLevel = 9;
+  zipFile.Settings.EncryptionAlgorithm = "PkzipWeak";
+
+  // Email: Internal
+  EmailMessage emailMessage = Email.CreateMessage();
+  emailMessage.Attachments = Collection.Create(zipFile).Map(x -> x to File);
+
 Properties
 ----------
 
@@ -17,7 +32,7 @@ Sample::
 
   File[] filesForZip = Collection.Create(csvFile).Map(x -> x to File);
   ZipFile zipFile = Zip.CreateFile("CSV File.csv #{now}.zip", filesForZip);
-  zipFile.Settings.Password = 'MagicCarpet1';
+  zipFile.Settings.Password = 'password123';
 
 Settings.CompressionLevel
 ^^^^^^^^^^^^^^^^^^^^^^^^^

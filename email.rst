@@ -1,6 +1,35 @@
 Email
 =====
 
+Typical Usage
+-------------
+
+External Email
+~~~~~~~~~~~~~~
+::
+
+  EmailMessage emailMessage = Email.CreateMessage();
+  emailMessage.Subject = "#{dealershipName} #{processName} for Rego:#{record.Rego} (#{record.ApptDate})";
+  emailMessage.Body = @"";
+  emailMessage.From = EmailAddress.Parse("service@someDealership.com");
+  emailMessage.Recipients = Email.CreateRecipients(record.Email);
+
+  messageList = messageList.Add(emailMessage);
+
+Internal Email
+~~~~~~~~~~~~~~
+::
+
+  EmailMessage internalEmailMessage = Email.CreateMessage();
+  internalEmailMessage.Attachments = Collection.Create(noContactCsv).Map(x -> x to File);
+  internalEmailMessage.From =  EmailAddress.Parse("support@irwinsolutions.com");
+  internalEmailMessage.Subject = "Appointment Confirmation - No Contact Email";
+  internalEmailMessage.Body = @"
+  <html xmlns=http://www.w3.org/1999/xhtml><head><title>irwinSolutions</title><body><p>Words go here.</p></body></html>
+  ";
+  internalEmailMessage.Recipients = Email.CreateRecipients("somebody@someDealership.com");
+  messageList = messageList.Add(internalEmailMessage);
+
 Properties
 ----------
 
