@@ -1,6 +1,23 @@
 EmailAddress
 ============
 
+EmailAddress.CanParse
+---------------------
+Returns true if the input string can be parsed as an email address, false otherwise.
+
+Overloads
+~~~~~~~~~
+1. **EmailAddress.CanParse(String str, IPhoneNumberParser parser): Bool**
+2. **EmailAddress.CanParse(String str): Bool**
+
+- parser defaults to the phone number parser defined in the language settings.
+- str cannot be null
+
+Sample::
+
+  EmailAddress.CanParse("blargh") == false;
+  EmailAddress.CanParse("an_actual_email@gmail.com") == true;
+
 EmailAddress.Parse
 ------------------
 Converts a String to an EmailAddress.
