@@ -49,8 +49,10 @@ Subject
 - **Stores type:** String
 - **Effect:** Sets the subject of the email message
 
-EmailMessage emailMessage = Email.CreateMessage();
-emailMessage.Subject = "CREATE WEALTH! 10 TIPS FOR BECOMING A MILLIONAIRE IN MONTHS!";
+Sample::
+
+  EmailMessage emailMessage = Email.CreateMessage();
+  emailMessage.Subject = "CREATE WEALTH! 10 TIPS FOR BECOMING A MILLIONAIRE IN MONTHS!";
 
 Email.CreateMessage
 ---------------------
