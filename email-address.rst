@@ -31,7 +31,7 @@ Overloads
 
 Sample::
 
-  emailMessage.From = EmailAddress.Parse("support@irwinsolutions.com");
+  EmailAdress = email = EmailAddress.Parse("support@irwinsolutions.com");
 
 EmailAddress.TryParse
 ---------------------
@@ -43,4 +43,4 @@ Overloads
 
 Sample::
 
-  record -> 'Email': EmailAddress.TryParse(record['Email'])
+  EmailAddresss email = EmailAddress.TryParse(email1, email2);
