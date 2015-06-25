@@ -1,6 +1,11 @@
 Diesel Documentation
 ====================
 
+This is the reference guide for the Diesel language.
+
+Table of Contents
+-----------------
+
 .. toctree::
    :maxdepth: 10
 
