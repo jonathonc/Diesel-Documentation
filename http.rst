@@ -7,26 +7,21 @@ Typical Usage
 -------------
 ::
 
-  ForEach(originalRecords, originalRecord -> {
-      ForEach(responseRecords, record -> {
-        String description = "hello";
-        String originalMessageTimestampText = Convert.ToString(Convert.ToLocalTime(record.OriginalMessageTimestamp to String), "{0:MM/dd/yyyy H:mm:ss}");
-        HttpMessage httpMessage = Http.CreateMessage();
-        httpMessage.Body = PolarBear.CreatePayload(projectId, 
-          originalRecord.Name to String, originalRecord.Mobile to String, originalRecord.Rego to String, record.Reply to String, description,
-              'SMS Message' : record.OriginalMessage,
-              'SMS Message Timestamp' : originalMessageTimestampText,
-              'Model' : originalRecord.Model,
-              'Make' : originalRecord.Make,
-              'Rego' : originalRecord.Rego
-          );
-        HttpRecipient httpRecipient = Http.CreateRecipient();
-        httpRecipient.UserName = polarBearApiKey;
-        httpRecipient.Address = UriAddress.Parse(polarBearApiUrl);
-        httpMessage.Recipients = Http.CreateRecipients(httpRecipient);
-        
-        messages = messages.Add(httpMessage);
-      });
+  HttpMessage httpMessage = Http.CreateMessage();
+  httpMessage.Body = PolarBear.CreatePayload(projectId, 
+    originalRecord.Name to String, originalRecord.Mobile to String, originalRecord.Rego to String, record.Reply to String, description,
+        'SMS Message' : record.OriginalMessage,
+        'SMS Message Timestamp' : originalMessageTimestampText,
+        'Model' : originalRecord.Model,
+        'Make' : originalRecord.Make,
+        'Rego' : originalRecord.Rego
+    );
+  HttpRecipient httpRecipient = Http.CreateRecipient();
+  httpRecipient.UserName = polarBearApiKey;
+  httpRecipient.Address = UriAddress.Parse(polarBearApiUrl);
+  httpMessage.Recipients = Http.CreateRecipients(httpRecipient);
+  
+  messages = messages.Add(httpMessage);
 
 HttpRecipient Properties
 -------------------------
