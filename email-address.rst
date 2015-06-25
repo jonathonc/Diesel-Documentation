@@ -31,7 +31,7 @@ Overloads
 
 Sample::
 
-  EmailAdress = email = EmailAddress.Parse("support@irwinsolutions.com");
+  EmailAdress email = EmailAddress.Parse("support@irwinsolutions.com");
 
 EmailAddress.TryParse
 ---------------------
