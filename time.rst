@@ -83,7 +83,8 @@ Overloads
 
 Sample::
 
-  record -> 'FirstRegoDateMonthInterval' : Time.GetIntervals(Time.CurrentLocal(), Convert.ToLocalTime(record['DeliveryDate']), Time.GetTimePeriod("Month"))
+  Int32 value = Time.GetIntervals(Time.CurrentLocal(), Convert.ToLocalTime(record['DeliveryDate']), 
+    Time.GetTimePeriod("Month"))
 
 
 Time.GetStartOf
