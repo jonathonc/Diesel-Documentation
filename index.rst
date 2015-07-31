@@ -3,6 +3,8 @@ Diesel Documentation
 
 This is the reference guide for the Diesel language.
 
+If you find things missing or unclear, please submit a pull request.
+
 Table of Contents
 -----------------
 
