@@ -1,11 +1,11 @@
 TimeFormats
 ===========
 
-Used in conjunction with String.ToString() to format a time to a String.
+Used in conjunction with Convert.ToString() to format a time to a String.
 
 ::
 
-  String.ToString(Time.CurrentLocal(), TimeFormats.LongYear); // 2015
+  Convert.ToString(Time.CurrentLocal(), TimeFormats.LongYear); // 2015
 
 TimeFormats.DayOfMonth
 --------------------------------
@@ -14,7 +14,7 @@ TimeFormats.DayOfMonth
 
 **Example:**
 ::
-  String.ToString(Time.CurrentLocal(), TimeFormats.DayOfMonth) == 19;
+  Convert.ToString(Time.CurrentLocal(), TimeFormats.DayOfMonth) == 19;
 
 TimeFormats.GeneralDateShortTime
 --------------------------------
@@ -23,7 +23,7 @@ TimeFormats.GeneralDateShortTime
 
 **Example:** 
 ::
-  String.ToString(Time.CurrentLocal(), TimeFormats.GeneralDateShortTime) == "19/06/2015 2:48 PM";
+  Convert.ToString(Time.CurrentLocal(), TimeFormats.GeneralDateShortTime) == "19/06/2015 2:48 PM";
 
 TimeFormats.GeneralDateLongTime
 --------------------------------
@@ -32,7 +32,7 @@ TimeFormats.GeneralDateLongTime
 
 **Example:** 
 ::
-  String.ToString(Time.CurrentLocal(), TimeFormats.GeneralDateLongTime)
+  Convert.ToString(Time.CurrentLocal(), TimeFormats.GeneralDateLongTime)
 
 TimeFormats.LongDate
 --------------------------------
@@ -41,13 +41,13 @@ TimeFormats.LongDate
 
 **Example:** 
 ::
-  String.ToString(Time.CurrentLocal(), TimeFormats.LongDate) == "Friday, 19 June, 2015";
+  Convert.ToString(Time.CurrentLocal(), TimeFormats.LongDate) == "Friday, 19 June, 2015";
 
 TimeFormats.LongDateShortTime
 --------------------------------
 - **Format string:** "f"
 - **Meaning:** A combination of the long date and short time patterns, separated by a space.  
-**Example:** String.ToString(Time.CurrentLocal(), TimeFormats.LongDateShortTime) == "Friday, 19 June, 2015 2:51 PM";
+**Example:** Convert.ToString(Time.CurrentLocal(), TimeFormats.LongDateShortTime) == "Friday, 19 June, 2015 2:51 PM";
 
 TimeFormats.LongDateLongTime
 --------------------------------
@@ -61,7 +61,7 @@ TimeFormats.LongDayOfWeek
 
 **Example:** 
 ::
-  String.ToString(Time.CurrentLocal(), TimeFormats.LongDayOfWeek) == "Friday";
+  Convert.ToString(Time.CurrentLocal(), TimeFormats.LongDayOfWeek) == "Friday";
 
 TimeFormats.LongMonthName
 --------------------------------
@@ -70,7 +70,7 @@ TimeFormats.LongMonthName
 
 **Example:** 
 ::
-  String.ToString(Time.CurrentLocal(), TimeFormats.LongDate) == "June";
+  Convert.ToString(Time.CurrentLocal(), TimeFormats.LongDate) == "June";
 
 TimeFormats.LongTime
 --------------------------------
@@ -79,7 +79,7 @@ TimeFormats.LongTime
 
 **Example:** 
 ::
-  String.ToString(Time.CurrentLocal(), TimeFormats.LongTime) == "3:40:00 PM";
+  Convert.ToString(Time.CurrentLocal(), TimeFormats.LongTime) == "3:40:00 PM";
 
 TimeFormats.LongYear
 --------------------------------
@@ -88,7 +88,7 @@ TimeFormats.LongYear
 
 **Example:** 
 ::
-  String.ToString(Time.CurrentLocal(), TimeFormats.LongDate) == "2015";
+  Convert.ToString(Time.CurrentLocal(), TimeFormats.LongDate) == "2015";
 
 TimeFormats.Month
 --------------------------------
@@ -97,7 +97,7 @@ TimeFormats.Month
 
 **Example:** 
 ::
-  String.ToString(Time.CurrentLocal(), TimeFormats.Month) == "06";
+  Convert.ToString(Time.CurrentLocal(), TimeFormats.Month) == "06";
 
 TimeFormats.RFC1123
 --------------------------------
@@ -106,7 +106,7 @@ TimeFormats.RFC1123
 
 **Example:** 
 ::
-  String.ToString(Time.CurrentLocal(), TimeFormats.RFC1123) == "Fri, 19 Jun 2015 15:47:00 GMT";
+  Convert.ToString(Time.CurrentLocal(), TimeFormats.RFC1123) == "Fri, 19 Jun 2015 15:47:00 GMT";
 
 TimeFormats.ShortDate
 --------------------------------
@@ -115,7 +115,7 @@ TimeFormats.ShortDate
 
 **Example:** 
 ::
-  String.ToString(Time.CurrentLocal(), TimeFormats.LongDate) == "19/06/2015";
+  Convert.ToString(Time.CurrentLocal(), TimeFormats.LongDate) == "19/06/2015";
 
 TimeFormats.ShortDateShortTime
 --------------------------------
@@ -129,7 +129,7 @@ TimeFormats.ShortDayOfWeek
 
 **Example:** 
 ::
-  String.ToString(Time.CurrentLocal(), TimeFormats.ShortDayOfWeek) == "Fri";
+  Convert.ToString(Time.CurrentLocal(), TimeFormats.ShortDayOfWeek) == "Fri";
 
 TimeFormats.ShortMonthName
 --------------------------------
@@ -138,7 +138,7 @@ TimeFormats.ShortMonthName
 
 **Example:** 
 ::
-  String.ToString(Time.CurrentLocal(), TimeFormats.ShortMonthName) == "Jun";
+  Convert.ToString(Time.CurrentLocal(), TimeFormats.ShortMonthName) == "Jun";
 
 TimeFormats.ShortYear
 --------------------------------
@@ -147,4 +147,4 @@ TimeFormats.ShortYear
 
 **Example:** 
 ::
-  String.ToString(Time.CurrentLocal(), TimeFormats.LongDate) == "15";
+  Convert.ToString(Time.CurrentLocal(), TimeFormats.LongDate) == "15";
