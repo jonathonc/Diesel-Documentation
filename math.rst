@@ -100,16 +100,17 @@ Sample::
 
 Math.Round
 ----------
-Rounds a floating point number to the nearest integer. If the number is exactly halfway between two integer, one of which is even and one of which is odd, it returns the even number. If exactly equal to an integer, returns that integer.
+
+Rounds a floating point number to the number of decimal places specified in precision, using the strategy specified in midpointRounding.
 
 Overloads
 ~~~~~~~~~
-1. **Math.Round(Double value): Double**
+1. **Math.Round(Double value, Int32 precision, RoundingStrategy midpointRounding): Double**
 
 Sample::
 
-  Math.Round(3.2) == 3;
-  Math.Round(3.7) == 4;
+  Math.Round(3.2, 0, Math.GetRounding('AwayFromZero')) == 3;
+  Math.Round(3.72, 1, Math.GetRounding('ToEven')) == 3.8;
 
 Math.SampleStandardDeviation
 ----------------------------
