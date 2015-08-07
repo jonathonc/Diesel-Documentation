@@ -103,6 +103,8 @@ Math.Round
 
 Rounds a floating point number to the number of decimal places specified in precision, using the strategy specified in midpointRounding.
 
+See: `Math.Round Method <https://msdn.microsoft.com/en-us/library/f5898377(v=vs.110).aspx>`_ for more information.
+
 Overloads
 ~~~~~~~~~
 1. **Math.Round(Double value, Int32 precision, RoundingStrategy midpointRounding): Double**
