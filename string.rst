@@ -35,11 +35,13 @@ Sample::
 
 String.EndsWith
 ---------------
+Returns true if the search string ends with the input string, otherwise returns false. If ignore case is set to true, then case differences are disregarded when comparing the strings.
 
 Overloads
 ~~~~~~~~~
 1. **String.EndsWith(String inputString, String searchString, Bool ignoreCase, ICultureAccessor cultureAccessor): Bool**
 2. **String.EndsWith(String inputString, String searchString, Bool ignoreCase): Bool**
+3. **String.EndsWith(String inputString, String searchString): Bool**
 
 - cultureAccessor defaults to the culture defined in settings
 - ignoreCase defaults to false
@@ -47,7 +49,8 @@ Overloads
 Sample::
 
   String word = "apples";
-  Bool endsWithS = String.EndsWith(word, "s")
+  Bool endsWithLowercaseS = String.EndsWith(word, "s");
+  Bool endsWithAnyS = String.EndsWith(word, "s", true);
 
 
 String.IndexOf
@@ -169,21 +172,6 @@ Sample::
 
   String.Replace("I am very calm right now", "very calm", "nearly s****ing myself");
 
-String.ToLower
---------------
-Converts a STRING to all lowercase.
-
-Overloads
-~~~~~~~~~
-1. **String.ToLower(String str, ICultureAccessor cultureAccessor): String**
-2. **String.ToLower(String str): String**
-
-- cultureAccessor defaults to the culture defined in settings
-- throws an exception if str is null
-
-Sample::
-  String.ToLower("WORD") == "word";
-
 String.Split
 ------------
 Returns a string array containing substrings of the original string delimeted by specified delimeter.
@@ -200,6 +188,40 @@ Sample::
   stringArr[0] == "This";
   stringArr[1] == "is";
   stringArr[2] == "a";
+
+String.StartsWith
+------------------
+Returns true if the search string begins with the input string, otherwise returns false. If ignore case is set to true, then case differences are disregarded when comparing the strings.
+
+Overloads
+~~~~~~~~~
+1. **String.StartsWith(String inputString, String searchString, Bool ignoreCase, ICultureAccessor cultureAccessor): Bool**
+2. **String.StartsWith(String inputString, String searchString, Bool ignoreCase): Bool**
+3. **String.StartsWith(String inputString, String searchString): Bool**
+
+- cultureAccessor defaults to the culture defined in settings
+- ignoreCase defaults to false
+
+Sample::
+
+  String word = "apples";
+  Bool startsWithLowercaseA = String.StartsWith(word, "a");
+  Bool startsWithAnyA = String.StartsWith(word, "a", true);
+
+String.ToLower
+--------------
+Converts a STRING to all lowercase.
+
+Overloads
+~~~~~~~~~
+1. **String.ToLower(String str, ICultureAccessor cultureAccessor): String**
+2. **String.ToLower(String str): String**
+
+- cultureAccessor defaults to the culture defined in settings
+- throws an exception if str is null
+
+Sample::
+  String.ToLower("WORD") == "word";
 
 String.ToProper
 ---------------
