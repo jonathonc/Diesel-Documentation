@@ -154,7 +154,7 @@ Takes a header, two lambda arguments repeated one after the other (alternating) 
 
 Overloads
 ~~~~~~~~~
-1. **String.Repeater(Record[] records, String header, LambdaArgument arg1, LambdaArgument arg2, String separator, String footer): String**
+1. **String.Repeater(Record[] records, String header, LambdaArgument item, LambdaArgument itemAlternative, LambdaArgument separator, String footer): String**
 
 Sample::
 
@@ -162,26 +162,12 @@ Sample::
 
       Record[] clientRecords = dataRecords;
 
-      String headerTemplate = @"<table style='width:450px; border: 1px solid grey' cellpadding=0 cellspacing=0>
-        <tr>
-            <th style='border: 1px solid #c8c8c8;text-align:left;padding-left:10px'><font face='verdana'><font size ='2'>Invoice Date</th>
-            <th style='border: 1px solid #c8c8c8;text-align:left;padding-left:10px'><font face='verdana'><font size ='2'>Invoice Number</th>
-            <th style='border: 1px solid #c8c8c8;text-align:left;padding-left:10px'><font face='verdana'><font size ='2'>Amount Due</th>
-        </tr>";
+      String headerTemplate = @"<table><tr><th>Name</th></tr>";
       String invoiceDataHtml = String.Repeater(clientRecords, headerTemplate,
-        y -> @"<tr>
-            <td style='border: 1px solid #c8c8c8;padding-left:10px'><font face='verdana'><font size ='2'>#{y.InvoiceDate}</td>
-            <td style='border: 1px solid #c8c8c8;padding-left:10px'><font face='verdana'><font size ='2'>#{y.InvoiceNumber}</td>
-            <td style='border: 1px solid #c8c8c8;padding-left:10px'><font face='verdana'><font size ='2'>#{y.AmountText}</td>
-        </tr>",
-        y -> @"<tr>
-            <td style='border: 1px solid #c8c8c8;padding-left:10px'><font face='verdana'><font size ='2'>#{y.InvoiceDate}</td>
-            <td style='border: 1px solid #c8c8c8;padding-left:10px'><font face='verdana'><font size ='2'>#{y.InvoiceNumber}</td>
-            <td style='border: 1px solid #c8c8c8;padding-left:10px'><font face='verdana'><font size ='2'>#{y.AmountText}</td>
-        </tr>",
-        y -> String.Empty,
-        '</table>'    
-      );
+        record -> @"<tr><td class="odd">#{record.Name}</td></tr>",
+        record -> @"<tr><td class="even">#{record.Name}</td></tr>",
+        record -> String.Empty,
+        '</table>');
 
 String.Replace
 --------------
