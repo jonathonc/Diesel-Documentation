@@ -17,7 +17,7 @@ Overloads
 Sample::
 
   LocalTime time = Time.CurrentLocal();
-  LocalTime sixDaysLater = Time.Add(time, Time.Day, 6);
+  LocalTime sixDaysLater = Time.Add(time, Time.GetTimePeriod('Month'), 6);
 
 Time.Component
 --------------
