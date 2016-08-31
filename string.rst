@@ -32,6 +32,34 @@ Sample::
 
   TextFile file = String.CreateFile("file.txt", "These are file contents");
 
+String.Count
+---------------
+Counts the number of instances of a phrase. By default the search is case-sensitive.
+
+Overloads
+~~~~~~~~~
+1. **String.Count(String text, String searchPhrase): Int32**
+2. **String.Count(String text, String searchPhrase, bool caseInsensitive): Int32**
+
+Sample::
+
+  Int32 count1 = String.Count("Banana | Oranges | Apple", "|"); // Returns 2
+  Int32 count2 = String.Count("Go go go go", "go"); // Returns 3
+  Int32 count3 = String.Count("Go go go go", "go", true); // Returns 4
+
+
+String.CountDollar
+-------------------
+Counts the dollar amount in the string
+
+Overloads
+~~~~~~~~~
+1. **String.CountDollar(String text): Double**
+
+Sample::
+
+  Double count1 = String.CountDollar("$50"); // Returns 50
+  Double count2 = String.CountDollar("BRAKE FLUID $50 | WIPERS $150"); // Returns200
 
 String.EndsWith
 ---------------
