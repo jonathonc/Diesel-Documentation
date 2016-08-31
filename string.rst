@@ -59,7 +59,7 @@ Overloads
 Sample::
 
   Double count1 = String.CountDollar("$50"); // Returns 50
-  Double count2 = String.CountDollar("BRAKE FLUID $50 | WIPERS $150"); // Returns200
+  Double count2 = String.CountDollar("BRAKE FLUID $50 | WIPERS $150"); // Returns 200
 
 String.EndsWith
 ---------------
