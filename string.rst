@@ -48,18 +48,18 @@ Sample::
   Int32 count3 = String.Count("Go go go go", "go", true); // Returns 4
 
 
-String.CountDollar
+String.SumDollar
 -------------------
 Counts the dollar amount in the string
 
 Overloads
 ~~~~~~~~~
-1. **String.CountDollar(String text): Double**
+1. **String.SumDollar(String text): Double**
 
 Sample::
 
-  Double count1 = String.CountDollar("$50"); // Returns 50
-  Double count2 = String.CountDollar("BRAKE FLUID $50 | WIPERS $150"); // Returns 200
+  Double count1 = String.SumDollar("$50"); // Returns 50
+  Double count2 = String.SumDollar("BRAKE FLUID $50 | WIPERS $150"); // Returns 200
 
 String.EndsWith
 ---------------
