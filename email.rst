@@ -72,6 +72,8 @@ Sample::
 
   EmailMessage emailMessage = Email.CreateMessage();
   emailMessage.Recipients = Email.CreateRecipients("someone@email.com");
+  emailMessage.Recipients = Email.CreateRecipients("someone@email.com", Email.GetRecipientType('Cc'));
+  emailMessage.Recipients = Email.CreateRecipients("someone@email.com", Email.GetRecipientType('Bcc'));
 
 Subject
 ~~~~~~~
