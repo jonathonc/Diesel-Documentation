@@ -147,4 +147,4 @@ TimeFormats.ShortYear
 
 **Example:** 
 ::
-  Convert.ToString(Time.CurrentLocal(), TimeFormats.LongDate) == "15";
+  Convert.ToString(Time.CurrentLocal(), TimeFormats.ShortDate) == "15";
