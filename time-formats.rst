@@ -115,7 +115,7 @@ TimeFormats.ShortDate
 
 **Example:** 
 ::
-  Convert.ToString(Time.CurrentLocal(), TimeFormats.LongDate) == "19/06/2015";
+  Convert.ToString(Time.CurrentLocal(), TimeFormats.ShortDate) == "19/06/2015";
 
 TimeFormats.ShortDateShortTime
 --------------------------------
