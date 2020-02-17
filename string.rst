@@ -212,6 +212,8 @@ Sample ::
   Output: "234"
 
 - None of the parameters can be null/empty
+- Index cannot be out of range
+- Length cannot exceed the range
 
 String.Replace
 --------------

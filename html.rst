@@ -11,6 +11,7 @@ Overloads
 
 Sample:: 
 
-    String email = support@irwinsolutions.com
-    String subject = 'This is an email message subject'
-    String body = 'This is an email message body'
+    String email = 'jonathonc@irwinsolutions.com'
+    String subject = 'Does 1 + 10 / 2 = 1000 & more maths...?'
+    String body = 'Hello\nThis is a new line\nDoes 1 + 10 / 2 = 1000 & more maths...?'
+    
