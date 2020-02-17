@@ -67,4 +67,8 @@ Url encodes text for use within query strings
 
 Overloads
 ~~~~~~~~~
-String urlPart = UriAddress.EncodeQueryStringPart('Does 1 + 10 / 2 = 1000 & more maths...?');
+1. UriAddress.EncodeQueryStringPart(String str)
+
+Sample::
+
+  String urlPart = UriAddress.EncodeQueryStringPart('Does 1 + 10 / 2 = 1000 & more maths...?');
