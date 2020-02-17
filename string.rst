@@ -197,6 +197,22 @@ Sample::
         record -> String.Empty,
         '</table>');
 
+
+String.Substring
+----------------
+Returns a substring of the first parameter based off the starting position (2nd parameter) and substring length (3rd parameter).
+
+Overloads
+~~~~~~~~~
+1. **String.Substring(String str, Integer startSubstr, substrLength): String**
+
+Sample ::
+
+  String.Substring("0123456789", 2, 3)
+  Output: "234"
+
+- None of the parameters can be null/empty
+
 String.Replace
 --------------
 Searches the input string str for instances of the substring searchString, and replaces all of them with replacementString.
@@ -294,6 +310,33 @@ Overloads
 Sample::
 
   String.ToUpper("word") == "WORD";
+
+String.ToSentenceCase
+----------------------
+This allows us to upper case the first letter of a series of words.
+
+Overloads
+~~~~~~~~~
+1. **String.ToSentenceCase(String str): String**
+
+Sample::
+
+  String sentenceText = String.ToSentenceCase('hello this is some text');
+  Output: "Hello this is some text"
+
+String.ToTitleCase
+------------------
+This allows us to title case (upper case every letter of each word)
+
+Overloads
+~~~~~~~~~
+1. **String.ToTitleCase(String Str): String**
+
+Sample:: 
+
+  String titleText = String.ToTitleCase('hello THIS iS sAmE TexT');
+  Output: "Hello This Is Same Text"
+
 
 String.Trim
 -----------

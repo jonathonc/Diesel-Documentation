@@ -46,3 +46,25 @@ Sample::
 
   UriAddress.TryParse("buuutttttttsss") == null;
   UriAddress google = UriAddress.TryParse("https://www.google.com");
+
+
+UriAddress.EncodeMailToPart
+---------------------------
+Url encodes text for use within mail to query strings
+
+Overloads
+~~~~~~~~~
+1. UriAddress.EncodeMailToPart(String str)
+
+Sample:: 
+
+  UriAddress.EncodeMailToPart('Does 1 + 10 / 2 = 1000 & more maths...?');
+
+
+UriAddress.EncodeQueryStringPart
+--------------------------------
+Url encodes text for use within query strings
+
+Overloads
+~~~~~~~~~
+String urlPart = UriAddress.EncodeQueryStringPart('Does 1 + 10 / 2 = 1000 & more maths...?');

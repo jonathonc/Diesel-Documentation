@@ -36,3 +36,5 @@ Table of Contents
    tryconvert.rst
    uriaddress.rst
    zip.rst
+   addevents.rst
+   html.rst
