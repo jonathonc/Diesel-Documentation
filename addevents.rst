@@ -12,4 +12,4 @@ Overloads
 
 Sample::
 
-    String link = AddEvent.CreateLink('client', 'Does 1 + 10 / 2 = 1000 & more maths...?', '2019-07-19 13:00', 60, 'Australia/Sydney', 'Does 1 + 10 / 2 = 1000 & more maths...?', 'Does 1 + 10 / 2 = 1000 & more maths...?', 'outlook', 'use-title');
+    String link = AddEvent.CreateLink('client', '2019-07-19 13:00', 60, 'This is an event title', 'Does 1 + 10 / 2 = 1000 & more maths...?', 'Australia/Sydney', 'outlook', 'use-title');
