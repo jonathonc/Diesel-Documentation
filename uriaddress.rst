@@ -50,7 +50,7 @@ Sample::
 
 UriAddress.EncodeMailToPart
 ---------------------------
-Url encodes text for use within mail to query strings
+Url encodes text for use within mail to query strings, returns an encoded mailto UriAddress.
 
 Overloads
 ~~~~~~~~~
@@ -59,7 +59,7 @@ Overloads
 Sample:: 
 
   UriAddress.EncodeMailToPart('Does 1 + 10 / 2 = 1000 & more maths...?');
-
+  Output: 'Does%201%20%2B%2010%20%2F%202%20%3D%201000%20%26%20more%20maths...%3F'
 
 UriAddress.EncodeQueryStringPart
 --------------------------------
