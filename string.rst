@@ -204,7 +204,7 @@ Returns a substring of the first parameter based off the starting position (2nd 
 
 Overloads
 ~~~~~~~~~
-1. **String.Substring(String str, Integer startSubstr, substrLength): String**
+1. **String.Substring(String str, Int startSubstr, substrLength): String**
 
 Sample ::
 

@@ -8,7 +8,7 @@ You can have a look at them here: https://www.addevent.com/documentation/direct-
 
 Overloads
 ~~~~~~~~~
-1. String link = AddEvent.CreateLink(String client, String startdate Integer duration, String title, String description, String location, String service, String calname);
+1. String link = AddEvent.CreateLink(String client, String startDate, Int duration, String title, String description, String location, String service, String calname);
 
 Sample::
 
