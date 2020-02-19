@@ -12,6 +12,7 @@ Table of Contents
    :maxdepth: 10
 
    intro.rst
+   addevents.rst
    canconvert.rst
    convert.rst
    csv.rst
@@ -19,6 +20,7 @@ Table of Contents
    email-address.rst
    email.rst
    guid.rst
+   html.rst
    http.rst
    math.rst
    name.rst
