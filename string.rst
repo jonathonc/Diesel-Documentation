@@ -209,7 +209,7 @@ Overloads
 Sample ::
 
   String.Substring("0123456789", 2, 3)
-  Output: "234"
+  // Output: "234"
 
 - None of the parameters can be null/empty
 - Index cannot be out of range
