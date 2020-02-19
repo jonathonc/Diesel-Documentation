@@ -213,7 +213,7 @@ Sample ::
 
 - None of the parameters can be null/empty
 - Index cannot be out of range
-- Length cannot exceed the range
+- Length cannot exceed the length of the string
 
 String.Replace
 --------------
